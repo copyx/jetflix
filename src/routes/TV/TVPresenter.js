@@ -5,7 +5,7 @@ import Section from 'components/Section';
 import Loader from 'components/Loader';
 
 const Container = styled.div`
-  padding: 0 10px;
+  padding: 0 20px;
 `;
 
 const TVPresenter = ({ topRated, popular, airingToday, error, loading }) =>
@@ -31,8 +31,8 @@ TVPresenter.propTypes = {
   topRated: PropTypes.array,
   popular: PropTypes.array,
   airingToday: PropTypes.array,
-  error: PropTypes.bool.isRequired,
-  loading: PropTypes.string,
+  error: PropTypes.string,
+  loading: PropTypes.bool.isRequired,
 };
 
 export default TVPresenter;

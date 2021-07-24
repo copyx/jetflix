@@ -20,7 +20,7 @@
   },
   "plugins": ["react", "prettier", "import", "react-hooks", "jsx-a11y"],
   "rules": {
-    "no-console": "error",
+    "no-console": "warn",
     "prettier/prettier": "warn",
     "react/prop-types": "off"
   }

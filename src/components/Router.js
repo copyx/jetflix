@@ -1,11 +1,11 @@
 import React from 'react';
 import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
 
+import Header from 'components/Header';
 import Home from 'routes/Home';
 import TV from 'routes/TV';
 import Search from 'routes/Search';
-
-import Header from 'components/Header';
+import Detail from 'routes/Detail';
 
 export default function Router() {
   return (
@@ -13,9 +13,10 @@ export default function Router() {
       <Header />
       <Switch>
         <Route path="/" exact component={Home} />
-        <Route path="/tv" component={TV} />
-        <Route path="/tv/popular" render={() => <h1>Popular</h1>} />
+        <Route path="/tv" exact component={TV} />
         <Route path="/search" component={Search} />
+        <Route path="/movie/:id" component={Detail} />
+        <Route path="/tv/:id" component={Detail} />
         <Redirect from="*" to="/" />
       </Switch>
     </BrowserRouter>

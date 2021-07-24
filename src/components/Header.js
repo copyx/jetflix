@@ -36,7 +36,6 @@ const StyledLink = styled(Link)`
 `;
 
 export default withRouter(function Header({ location: { pathname } }) {
-  console.log(pathname);
   return (
     <StyledHeader>
       <List>

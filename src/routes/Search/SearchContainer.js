@@ -3,28 +3,21 @@ import React from 'react';
 import SearchPresenter from './SearchPresenter';
 
 export default class SearchContainer extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      // searchTerm: null,
-      searchTerm: 'code',
-      movieResult: null,
-      tvResult: null,
-      loading: false,
-      error: null,
-    };
-  }
+  state = {
+    searchTerm: null,
+    movieResult: null,
+    tvResult: null,
+    loading: false,
+    error: null,
+  };
 
-  componentDidMount() {
-    this.handleSubmit();
-  }
-
-  handleSubmit() {
+  handleSubmit = (event) => {
+    event.preventDefault();
     const { searchTerm } = this.state;
     if (searchTerm !== '') {
       this.searchByTerm(searchTerm);
     }
-  }
+  };
 
   async searchByTerm() {
     const { searchTerm } = this.state;

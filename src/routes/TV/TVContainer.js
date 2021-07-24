@@ -3,16 +3,13 @@ import TVPresenter from './TVPresenter';
 import { tvApi } from 'api';
 
 export default class TVContainer extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      topRated: null,
-      popular: null,
-      airingToday: null,
-      error: null,
-      loading: true,
-    };
-  }
+  state = {
+    topRated: null,
+    popular: null,
+    airingToday: null,
+    error: null,
+    loading: true,
+  };
 
   async componentDidMount() {
     try {

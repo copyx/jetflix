@@ -5,12 +5,18 @@
     "jest": true
   },
   "extends": ["plugin:react/recommended", "plugin:prettier/recommended"],
+  "parser": "@babel/eslint-parser",
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
     },
     "ecmaVersion": 12,
-    "sourceType": "module"
+    "sourceType": "module",
+    "requireConfigFile": false,
+    "babelOptions": {
+      "presets": ["@babel/preset-react"],
+      "plugins": ["@babel/plugin-proposal-class-properties"]
+    }
   },
   "plugins": ["react", "prettier", "import", "react-hooks", "jsx-a11y"],
   "rules": {

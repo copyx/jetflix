@@ -3,16 +3,13 @@ import HomePresenter from './HomePresenter';
 import { movieApi } from 'api';
 
 export default class HomeContainer extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      nowPlaying: null,
-      upcoming: null,
-      popular: null,
-      error: null,
-      loading: true,
-    };
-  }
+  state = {
+    nowPlaying: null,
+    upcoming: null,
+    popular: null,
+    error: null,
+    loading: true,
+  };
 
   async componentDidMount() {
     try {

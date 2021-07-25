@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/jetflix/static/js/main.b2c4e7b7.chunk.js",
-    "main.js.map": "/jetflix/static/js/main.b2c4e7b7.chunk.js.map",
+    "main.js": "/jetflix/static/js/main.d1246af4.chunk.js",
+    "main.js.map": "/jetflix/static/js/main.d1246af4.chunk.js.map",
     "runtime-main.js": "/jetflix/static/js/runtime-main.5b74fedd.js",
     "runtime-main.js.map": "/jetflix/static/js/runtime-main.5b74fedd.js.map",
     "static/js/2.c2a22e62.chunk.js": "/jetflix/static/js/2.c2a22e62.chunk.js",
@@ -12,6 +12,6 @@
   "entrypoints": [
     "static/js/runtime-main.5b74fedd.js",
     "static/js/2.c2a22e62.chunk.js",
-    "static/js/main.b2c4e7b7.chunk.js"
+    "static/js/main.d1246af4.chunk.js"
   ]
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
+import { HashRouter, Redirect, Route, Switch } from 'react-router-dom';
 
 import Header from 'components/Header';
 import Home from 'routes/Home';
@@ -9,7 +9,7 @@ import Detail from 'routes/Detail';
 
 export default function Router() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Header />
       <Switch>
         <Route path="/" exact component={Home} />
@@ -19,6 +19,6 @@ export default function Router() {
         <Route path="/tv/:id" component={Detail} />
         <Redirect from="*" to="/" />
       </Switch>
-    </BrowserRouter>
+    </HashRouter>
   );
 }

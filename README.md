@@ -4,10 +4,10 @@ It is a project to practice React.
 
 ## Screens
 
-- [ ] Home
-- [ ] TV Shows
-- [ ] Search
-- [ ] Detail
+- [x] Home
+- [x] TV Shows
+- [x] Search
+- [x] Detail
 
 ## API Verbs
 
@@ -19,3 +19,13 @@ It is a project to practice React.
 - [x] TV Show Detail
 - [x] Movie Detail
 - [x] Search (Movie, TV)
+
+## Challenge
+
+- [ ] IMDB link on detail
+- [ ] Tabs inside of the movie detail
+  - [ ] Show YouTube video on detail
+  - [ ] Show the production company of the movie on detail
+- [ ] Collections Link
+- [ ] /collections Route
+- [ ] On TV Show, show seasons and creators

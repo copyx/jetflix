@@ -4,7 +4,7 @@ import SearchPresenter from './SearchPresenter';
 
 export default class SearchContainer extends React.Component {
   state = {
-    searchTerm: null,
+    searchTerm: '',
     movieResults: null,
     tvResults: null,
     loading: false,

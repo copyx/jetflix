@@ -15,12 +15,7 @@ export default class DetailContainer extends React.Component {
       error: null,
       loading: true,
       isMovie: /^\/movie\//.test(pathname),
-      isTV: /^\/tv\//.test(pathname),
     };
-  }
-
-  isTV(pathname) {
-    return /^\/tv\//.test(pathname);
   }
 
   async componentDidMount() {
@@ -35,13 +30,12 @@ export default class DetailContainer extends React.Component {
     const parsedId = parseInt(id);
     if (isNaN(parsedId)) return push('/');
 
-    const { isMovie, isTV } = this.state;
+    const { isMovie } = this.state;
     try {
       if (isMovie) {
         const { data: result } = await movieApi.detail(parsedId);
         this.setState({ result });
-      }
-      if (isTV) {
+      } else {
         const { data: result } = await tvApi.detail(parsedId);
         this.setState({ result });
       }

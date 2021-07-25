@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.js": "/jetflix/static/js/main.f30d7881.chunk.js",
-    "main.js.map": "/jetflix/static/js/main.f30d7881.chunk.js.map",
+    "main.js": "/jetflix/static/js/main.b2c4e7b7.chunk.js",
+    "main.js.map": "/jetflix/static/js/main.b2c4e7b7.chunk.js.map",
     "runtime-main.js": "/jetflix/static/js/runtime-main.5b74fedd.js",
     "runtime-main.js.map": "/jetflix/static/js/runtime-main.5b74fedd.js.map",
-    "static/js/2.f2444a3d.chunk.js": "/jetflix/static/js/2.f2444a3d.chunk.js",
-    "static/js/2.f2444a3d.chunk.js.map": "/jetflix/static/js/2.f2444a3d.chunk.js.map",
+    "static/js/2.c2a22e62.chunk.js": "/jetflix/static/js/2.c2a22e62.chunk.js",
+    "static/js/2.c2a22e62.chunk.js.map": "/jetflix/static/js/2.c2a22e62.chunk.js.map",
     "index.html": "/jetflix/index.html",
-    "static/js/2.f2444a3d.chunk.js.LICENSE.txt": "/jetflix/static/js/2.f2444a3d.chunk.js.LICENSE.txt"
+    "static/js/2.c2a22e62.chunk.js.LICENSE.txt": "/jetflix/static/js/2.c2a22e62.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.5b74fedd.js",
-    "static/js/2.f2444a3d.chunk.js",
-    "static/js/main.f30d7881.chunk.js"
+    "static/js/2.c2a22e62.chunk.js",
+    "static/js/main.b2c4e7b7.chunk.js"
   ]
 }

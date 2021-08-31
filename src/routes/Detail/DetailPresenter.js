@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Helmet from 'react-helmet';
@@ -74,10 +74,34 @@ const Overview = styled.p`
   opacity: 0.7;
   line-height: 1.5;
   width: 100%;
+  margin-bottom: 20px;
 `;
 
-const DetailPresenter = ({ result, error, loading }) =>
-  loading ? (
+const TabContainer = styled.div``;
+
+const TabMenuBox = styled.div``;
+
+const TabMenuButton = styled.button``;
+
+const TabContentBox = styled.div``;
+
+const TabContentTitle = styled.h4`
+  font-size: 28px;
+  margin-top: 16px;
+`;
+
+const TabContentItemTitle = styled.h5`
+  font-size: 18px;
+  margin-top: 10px;
+`;
+
+const CompanyLogo = styled.img`
+  width: 100%;
+`;
+
+const DetailPresenter = ({ result, error, loading }) => {
+  const [tab, setTab] = useState('videos');
+  return loading ? (
     <>
       <Helmet>
         <title>Loading | Jetflix</title>
@@ -95,9 +119,11 @@ const DetailPresenter = ({ result, error, loading }) =>
         />
         <Content>
           <Cover
-            bgImage={`https://image.tmdb.org/t/p/original${
-              result.poster_path ? result.poster_path : '/noPosterSmall.png'
-            }`}
+            bgImage={
+              result.poster_path
+                ? `https://image.tmdb.org/t/p/original${result.poster_path}`
+                : '/noPosterSmall.png'
+            }
           />
           <Data>
             <Title>{result.title ? result.title : result.name}</Title>
@@ -134,11 +160,87 @@ const DetailPresenter = ({ result, error, loading }) =>
               )}
             </ItemContainer>
             <Overview>{result.overview}</Overview>
+            <TabContainer>
+              <TabMenuBox>
+                <TabMenuButton onClick={() => setTab('videos')}>
+                  Videos
+                </TabMenuButton>
+                <TabMenuButton onClick={() => setTab('companies & countries')}>
+                  Production Companies & Countries
+                </TabMenuButton>
+                {result.seasons && (
+                  <TabMenuButton onClick={() => setTab('seasons')}>
+                    Seasons
+                  </TabMenuButton>
+                )}
+              </TabMenuBox>
+              <TabContentBox>
+                {tab === 'videos' && (
+                  <>
+                    {result.videos &&
+                      result.videos.results &&
+                      result.videos.results.map((video) => (
+                        <iframe
+                          key={video.id}
+                          src={`https://www.youtube.com/embed/${video.key}`}
+                          frameBorder="0"
+                          allow="encrypted-media; picture-in-picture"
+                          allowFullScreen
+                        ></iframe>
+                      ))}
+                  </>
+                )}
+                {tab === 'companies & countries' && (
+                  <>
+                    <TabContentTitle>Production Companies</TabContentTitle>
+                    {result.production_companies.map((company) => (
+                      <div key={company.id}>
+                        <TabContentItemTitle>
+                          {company.name}
+                        </TabContentItemTitle>
+                        <CompanyLogo
+                          src={
+                            company.logo_path
+                              ? `https://image.tmdb.org/t/p/original${company.logo_path}`
+                              : '/noPosterSmall.png'
+                          }
+                        />
+                      </div>
+                    ))}
+                    <TabContentTitle>Production Countries</TabContentTitle>
+                    {result.production_countries.map((country, index) => (
+                      <div key={index}>
+                        <TabContentItemTitle>
+                          {country.name}
+                        </TabContentItemTitle>
+                      </div>
+                    ))}
+                  </>
+                )}
+                {tab === 'seasons' && (
+                  <>
+                    {result.seasons.map((season) => (
+                      <div key={season.id}>
+                        <TabContentItemTitle>{season.name}</TabContentItemTitle>
+                        <CompanyLogo
+                          src={
+                            season.poster_path
+                              ? `https://image.tmdb.org/t/p/original${season.poster_path}`
+                              : '/noPosterSmall.png'
+                          }
+                        />
+                      </div>
+                    ))}
+                  </>
+                )}
+              </TabContentBox>
+            </TabContainer>
           </Data>
         </Content>
       </Container>
     </>
   );
+};
 
 DetailPresenter.propTypes = {
   result: PropTypes.object,

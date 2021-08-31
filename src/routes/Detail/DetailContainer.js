@@ -41,6 +41,10 @@ export default class DetailContainer extends React.Component {
           data: { imdb_id },
         } = await tvApi.externalIds(parsedId);
         result.imdb_id = imdb_id;
+        const {
+          data: { results },
+        } = await tvApi.videos(parsedId);
+        result.videos = { results };
         this.setState({ result });
       }
     } catch {

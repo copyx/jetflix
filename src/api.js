@@ -25,6 +25,7 @@ export const tvApi = {
     api.get(`tv/${id}`, { params: { append_to_response: 'videos' } }),
   search: (term) =>
     api.get('search/tv', { params: { query: encodeURIComponent(term) } }),
+  externalIds: (id) => api.get(`tv/${id}/external_ids`),
 };
 
 export default api;

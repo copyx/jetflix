@@ -53,9 +53,17 @@ const Title = styled.h3`
 
 const ItemContainer = styled.div`
   margin: 20px 0;
+  line-height: 20px;
 `;
 
 const Item = styled.span``;
+
+const IMDbLink = styled.a`
+  background-color: #e2b616;
+  color: black;
+  padding: 2px 5px;
+  border-radius: 2px;
+`;
 
 const Divider = styled.span`
   margin: 0 10px;
@@ -113,6 +121,17 @@ const DetailPresenter = ({ result, error, loading }) =>
                       : `${genre.name} / `
                   )}
               </Item>
+              {result.imdb_id && (
+                <>
+                  <Divider>•</Divider>
+                  <IMDbLink
+                    href={`https://www.imdb.com/title/${result.imdb_id}`}
+                    target={'_blank'}
+                  >
+                    IMDb
+                  </IMDbLink>
+                </>
+              )}
             </ItemContainer>
             <Overview>{result.overview}</Overview>
           </Data>

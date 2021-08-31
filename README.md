@@ -22,10 +22,10 @@ It is a project to practice React.
 
 ## Challenge
 
-- [ ] IMDB link on detail
+- [x] IMDB link on detail
 - [ ] Tabs inside of the movie detail
   - [ ] Show YouTube video on detail
-  - [ ] Show the production company of the movie on detail
+  - [ ] Show the production company & countries of the movie on detail
 - [ ] Collections Link
 - [ ] /collections Route
 - [ ] On TV Show, show seasons and creators
